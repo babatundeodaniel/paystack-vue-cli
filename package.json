@@ -1,0 +1,24 @@
+{
+    "name": "paystack-vue-cli",
+    "version": "1.0.0",
+    "main": "dist/paystack-vue-cli.umd.js",
+    "module": "dist/paystack-vue-cli.esm.js",
+    "unpkg": "dist/paystack-vue-cli.min.js",
+    "browser": {
+      "./sfc": "src/paystack.vue"
+    },
+    "scripts": {
+      "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+      "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/paystack-vue-cli.umd.js",
+      "build:es": "rollup --config build/rollup.config.js --format es --file dist/paystack-vue-cli.esm.js",
+      "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/paystack-vue-cli.min.js"
+    },
+    "devDependencies": {
+      "rollup": "^1.17.0",
+      "@rollup/plugin-buble": "^0.21.3",
+      "@rollup/plugin-commonjs": "^11.1.0",
+      "rollup-plugin-vue": "^5.0.1",
+      "vue": "^2.6.10",
+      "vue-template-compiler": "^2.6.10"
+    }
+  }
